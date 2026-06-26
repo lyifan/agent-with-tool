@@ -1,0 +1,29 @@
+# Ignore local environment and secrets
+.env
+.env.*
+.azure/
+
+# Ignore local code deployment packaging artifact rules
+.agentignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS files
+.DS_Store
+Thumbs.db

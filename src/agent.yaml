@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/microsoft/AgentSchema/refs/heads/main/schemas/v1.0/ContainerAgent.yaml
+
+name: agent-with-tool
+kind: hosted
+protocols:
+  - protocol: responses
+    version: 1.0.0
+environment_variables:
+
+description: >
+  An Agent Framework agent with local tools hosted by Foundry.
+metadata:
+  tags:
+    - Agent Framework
+    - AI Agent Hosting
+    - Azure AI AgentServer
+    - Responses Protocol
+    - Streaming
+resources:
+  cpu: ""
+  memory: ""
