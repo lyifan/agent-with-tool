@@ -18,15 +18,15 @@ services:
                     memory: 1Gi
             deployments:
                 - model:
-                    format: OpenAI
-                    name: gpt-5-nano
-                    version: "2025-08-07"
-                  name: gpt-5-nano
+                    format: DeepSeek
+                    name: DeepSeek-V4-Flash
+                    version: "2026-04-23"
+                  name: DeepSeek-V4-Flash
                   sku:
                     capacity: 20
                     name: GlobalStandard
         container:
-            image: cresz2oihnmct5w.azurecr.io/agent-with-tool-dev:latest
+            image: ${AZURE_CONTAINER_REGISTRY_ENDPOINT}/agent-with-tool-dev:latest
 infra:
     provider: bicep
     path: ./infra

@@ -2,17 +2,20 @@
 
 import os
 from random import randint
+import logging
 
 from agent_framework import Agent, tool
 from agent_framework.foundry import FoundryChatClient
 from agent_framework_foundry_hosting import ResponsesHostServer
 from azure.identity import DefaultAzureCredential
-from dotenv import load_dotenv
 from pydantic import Field
 from typing_extensions import Annotated
 
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+logger.info(f"[agent startup] AZURE_AI_PROJECT_ENDPOINT={os.getenv('FOUNDRY_PROJECT_ENDPOINT')}")
+logger.info(f"[agent startup] AZURE_AI_MODEL_DEPLOYMENT_NAME={os.getenv('AZURE_AI_MODEL_DEPLOYMENT_NAME')}")
 # Load environment variables from .env file
-load_dotenv()
 
 
 @tool(approval_mode="never_require")
@@ -25,6 +28,8 @@ def get_weather(
 
 
 def main():
+
+
     client = FoundryChatClient(
         project_endpoint=os.environ["FOUNDRY_PROJECT_ENDPOINT"],
         model=os.environ["AZURE_AI_MODEL_DEPLOYMENT_NAME"],
